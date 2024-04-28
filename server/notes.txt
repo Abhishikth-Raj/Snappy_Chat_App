@@ -1,0 +1,74 @@
+initially create two folders 
+1) server
+2) client
+
+make a react app in client folder
+```
+npx create-react-app client
+```
+in the client folder 
+    in the pages folder make react components for the login, register, chat pages
+    and in App.js import the pages and use them in the routes
+
+
+make a node app in server folder
+```
+npm init
+```
+install the following dependencies
+```
+express, mongoose, socket.io, nodemon, cors, bcrypt, jsonwebtoken
+```
+mongoose - connect to mongodb
+socket.io - for real time communication
+bcrypt - for hashing passwords
+jsonwebtoken - for authentication
+cors - for cross origin resource sharing
+nodemon - for auto restarting the server
+
+in the env file add the following
+    port=5000
+    mongoURI=your mongodb uri
+
+in the index.js file import all the required packages and start the server at the port specified in the env file
+and establish a connection to the mongodb database
+
+
+
+
+worked on register page.
+
+how does a react use state work?
+The react useState hook is a function that takes in a single argument, 
+which is the initial state, and returns an array that holds two values: the first value is the current state and the second value is a function that updates the state.
+ The useState hook is imported from the react library.
+
+```
+
+using this hooks, 
+i handled changes in the input fields,
+and also handled the submit event of the form,
+validations,
+password visibility toggle,
+
+now its time to go further
+
+if the handle validation is true,
+then it should make a post request to the server.
+
+
+30th dec.
+worked on login page, 
+(in the login controller, created a user object (initially, it was usernameCheck, due to this name, it was not getting fetched in setAvatar page, so created another user object in login controller, and then sent it seperately, now data.user is not undefined,
+it is the user object fetched from mongo db either with email or user id
+))
+
+uptil now, 
+user will be able to register and login, setAvatar.
+now,
+
+-> create a chat page
+-> for this, create a chat component with css included.
+-> create a api route to fetch all the contacts of the user to display them in the chat page
+-> create a socket connection in the chat page to connect to the server
+-> create a socket connection in the server to connect to the client
